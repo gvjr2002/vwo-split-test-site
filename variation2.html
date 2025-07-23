@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Variation 2 - VWO Metrics Test</title>
+  <title>Variation 2 - VWO Test</title>
  <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
@@ -16,41 +16,56 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 </script>
 <!-- End VWO Async SmartCode -->
   <style>
-    body { font-family: sans-serif; margin: 40px; }
-    .cta-btn { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-    .form-box { background: #f9f9f9; padding: 20px; width: 300px; }
-    #tracking-element { width: 160px; height: 60px; background: purple; color: white; display: flex; align-items: center; justify-content: center; margin-top: 20px; }
+    body { font-family: 'Segoe UI', sans-serif; background: #e8f0fe; padding: 50px; }
+    h2 { color: #333; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    input, select, textarea { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; }
+    .btn { background: #0069d9; color: #fff; border: none; padding: 10px 15px; cursor: pointer; }
+    .interact-box { padding: 12px; background: #ffdd57; margin: 5px 0; cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <h1>Special Offer Just for You</h1>
-  <p>Shop our exclusive deals now!</p>
+  <div class="card">
 
-  <!-- Click Goal -->
-  <button class="cta-btn" id="buy-button">Claim Discount</button>
+    <h2>📝 Fill Your Details Below</h2>
 
-  <!-- Form Submit Goal -->
-  <div class="form-box">
-    <h3>Subscribe to Newsletter</h3>
-    <form id="lead-form">
-      <input type="email" name="email" placeholder="Your Email" required />
-      <br /><br />
-      <input type="submit" value="Subscribe" />
+    <p>Test SPA: <span onclick="history.pushState({}, '', '#settings')" style="color:blue;cursor:pointer;">Settings Page</span></p>
+
+    <form id="form-test">
+      <input type="text" placeholder="Name" required>
+      <input type="tel" placeholder="Phone" required>
+      <input type="email" placeholder="Email ID" required>
+      <input type="password" placeholder="Password" required>
+      <input type="date" placeholder="DOB">
+
+      <select>
+        <option value="">Education</option>
+        <option>BSc</option>
+        <option>MSc</option>
+      </select>
+
+      <textarea placeholder="Your Address"></textarea>
+
+      <button type="submit" class="btn">Submit Form</button>
     </form>
+
+    <p>If you’ve already signed up, <a href="#">click here</a> to login.</p>
+
+    <div class="interact-box">Click Element #1</div>
+    <div class="interact-box">Click Element #2</div>
+    <div class="interact-box">Click Element #3</div>
+
+    <div style="background: #222; color: white; text-align: center; padding: 10px;">Dead Click Test Box</div>
+
+    <button class="btn" onclick="_vis_opt_goal_conversion(202)">Fire Custom Goal</button>
+
   </div>
 
-  <!-- Revenue Goal -->
-  <button onclick="_vis_opt_revenue_conversion(1500)">Pay ₹1500 Now</button>
-
-  <!-- Custom Conversion Goal -->
-  <button onclick="_vis_opt_goal_conversion(201)">Trigger Custom Event</button>
-
-  <!-- Page Visit Goal -->
-  <a href="/thank-you.html">Complete Action</a>
-
-  <!-- Track Element -->
-  <div id="tracking-element">Track This Box</div>
+  <script>
+    setTimeout(() => console.log('Engagement triggered'), 10000);
+    window.addEventListener('beforeunload', () => console.log('Page Unload'));
+  </script>
 
 </body>
 </html>
