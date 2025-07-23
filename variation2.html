@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Variation 2 Page</title>
+  <title>Variation 2 - VWO Metrics Test</title>
  <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
 window._vwo_code || (function() {
-var account_id=1112801,
+var account_id=29000317,
 version=2.1,
 settings_tolerance=2000,
 hide_element='body',
@@ -17,14 +16,41 @@ f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+
 </script>
 <!-- End VWO Async SmartCode -->
   <style>
-    body { font-family: Arial; padding: 2rem; background-color: #e8f4fc; }
-    h1 { color: blue; }
-    button { padding: 10px 20px; background-color: blue; color: white; }
+    body { font-family: sans-serif; margin: 40px; }
+    .cta-btn { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+    .form-box { background: #f9f9f9; padding: 20px; width: 300px; }
+    #tracking-element { width: 160px; height: 60px; background: purple; color: white; display: flex; align-items: center; justify-content: center; margin-top: 20px; }
   </style>
 </head>
 <body>
-  <h1>Welcome to Variation 2 🔥</h1>
-  <p>This is the second variation version.</p>
-  <button onclick="alert('Variation 2 button clicked')">Click Me</button>
+
+  <h1>Special Offer Just for You</h1>
+  <p>Shop our exclusive deals now!</p>
+
+  <!-- Click Goal -->
+  <button class="cta-btn" id="buy-button">Claim Discount</button>
+
+  <!-- Form Submit Goal -->
+  <div class="form-box">
+    <h3>Subscribe to Newsletter</h3>
+    <form id="lead-form">
+      <input type="email" name="email" placeholder="Your Email" required />
+      <br /><br />
+      <input type="submit" value="Subscribe" />
+    </form>
+  </div>
+
+  <!-- Revenue Goal -->
+  <button onclick="_vis_opt_revenue_conversion(1500)">Pay ₹1500 Now</button>
+
+  <!-- Custom Conversion Goal -->
+  <button onclick="_vis_opt_goal_conversion(201)">Trigger Custom Event</button>
+
+  <!-- Page Visit Goal -->
+  <a href="/thank-you.html">Complete Action</a>
+
+  <!-- Track Element -->
+  <div id="tracking-element">Track This Box</div>
+
 </body>
 </html>
