@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Variation Page - VWO Metrics Test</title>
+  <title>Variation 1 - VWO Metrics Test</title>
   <!-- Start VWO Async SmartCode -->
 <link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
 <script type='text/javascript' id='vwoCode'>
@@ -15,34 +15,81 @@ hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;ba
 f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
 </script>
 <!-- End VWO Async SmartCode -->
+  <style>
+    body { font-family: Verdana, sans-serif; background: #f4f4f4; padding: 40px; }
+    h1 { color: #444; }
+    .container { background: white; padding: 30px; border-radius: 10px; }
+    .btn { background: #28a745; color: white; border: none; padding: 10px 20px; margin: 10px 0; cursor: pointer; }
+    .click-box { background: lightblue; padding: 10px; margin: 5px; border: 1px solid #ccc; cursor: pointer; }
+  </style>
 </head>
 <body>
-  <h1>Welcome to the Variation Page</h1>
+  <div class="container">
 
-  <!-- Engagement metric -->
+    <h1>🎉 Welcome Back! Time to Complete Registration</h1>
+    <p>Click to explore <a href="https://www.google.com" target="_blank">Google</a></p>
 
-  <!-- Click Tracking -->
-  <button id="buy-button">Buy Now - Variation</button>
+    <!-- SPA Interaction -->
+    <button class="btn" onclick="history.pushState({}, '', '#dashboard')">Go to Dashboard</button>
+    <div class="btn" onclick="history.pushState({}, '', '#profile')">Profile Page</div>
 
-  <!-- Form Submit -->
-  <form id="lead-form">
-    <input type="text" name="email" placeholder="Enter Email" required />
-    <input type="submit" value="Submit" />
-  </form>
+    <!-- Form -->
+    <form id="registration-form">
+      <label>Full Name</label>
+      <input type="text" required>
 
-  <!-- Revenue Tracking -->
-  <button onclick="_vis_opt_revenue_conversion(1000)">Simulate Purchase ₹1000</button>
+      <label>Phone</label>
+      <input type="tel" required>
 
-  <!-- Custom Conversion -->
-  <button onclick="_vis_opt_goal_conversion(201)">Custom Conversion Goal</button>
+      <label>Email</label>
+      <input type="email" required>
 
-  <!-- Page Visit -->
-  <a href="/thank-you.html">Go to Thank You Page</a>
+      <label>Password (8+ chars)</label>
+      <input type="password" required>
 
-  <!-- Track Element -->
-  <div id="tracking-element" style="width: 150px; height: 50px; background: green;">
-    Hover or Interact with Me
+      <label>Gender</label>
+      <input type="radio" name="gender" value="male"> Male
+      <input type="radio" name="gender" value="female"> Female
+
+      <label>DOB</label>
+      <input type="date">
+
+      <label>Hobbies</label>
+      <input type="checkbox" value="Reading"> Reading
+      <input type="checkbox" value="Coding"> Coding
+
+      <label>Qualification</label>
+      <select>
+        <option>--Select--</option>
+        <option>Graduate</option>
+        <option>Post Graduate</option>
+      </select>
+
+      <label>Address</label>
+      <textarea></textarea>
+
+      <p>By registering, you agree to our <a href="#">terms</a>.</p>
+      <input type="submit" class="btn" value="Register Now">
+    </form>
+
+    <p><a href="#">Already registered? Log in here</a></p>
+
+    <!-- Clicks -->
+    <div class="click-box">Click Box A</div>
+    <div class="click-box">Click Box B</div>
+    <div class="click-box">Click Box C</div>
+
+    <!-- Dead Click Zone -->
+    <div style="margin-top:20px; background:#dc3545; color:white; padding:10px;">Dead Click Zone</div>
+
+    <!-- Custom Goal -->
+    <button onclick="_vis_opt_goal_conversion(202)">Trigger Goal</button>
+
   </div>
 
+  <script>
+    setTimeout(() => console.log('Engagement Metric'), 10000);
+    window.addEventListener('beforeunload', () => console.log('Unload'));
+  </script>
 </body>
 </html>
